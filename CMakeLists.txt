@@ -4,4 +4,5 @@ add_executable(Raycer)
 
 target_sources(Raycer
 	PRIVATE
-	main.cpp)
+	main.cpp
+	Vec3.h)
