@@ -3,8 +3,8 @@
 #include "ray.h"
 #include "vec3.h"
 
-color ray_color(const ray& r)
-{
+
+color ray_color(const ray& r) {
     vec3 unit_direction = unit_vector(r.direction());
     auto a = 0.5 * (unit_direction.y() + 1.0);
     return (1.0 - a) * color(1.0, 1.0, 1.0) + a * color(0.5, 0.7, 1.0);
@@ -37,12 +37,12 @@ int main() {
 
     // Render
 
-    std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
+    std::cout << "P3\n" << image_width << " " << image_height << "\n255\n";
 
     for (int j = 0; j < image_height; j++) {
         std::clog << "\rScanlines remaining" << (image_height - j) << ' ' << std::flush;
         for (int i = 0; i < image_width; i++) {
-            auto pixel_center = pixel00_loc + (pixel_delta_u)+(j * pixel_delta_v);
+            auto pixel_center = pixel00_loc + (i * pixel_delta_u)+(j * pixel_delta_v);
             auto ray_d = pixel_center - camera_center;
             ray r(camera_center, ray_d);
 
