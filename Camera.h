@@ -2,6 +2,7 @@
 
 #include "Hittable.h"
 #include "constants.h"
+#include "color.h"
 
 class camera
 {

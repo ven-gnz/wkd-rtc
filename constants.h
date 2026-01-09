@@ -10,11 +10,11 @@
 
 #include "ray.h"
 #include "Vec3.h"
-#include "color.h"
+// #include "color.h"
 
 
-const double infinity = std::numeric_limits<double>::infinity();
-const double pi = 3.1415926535897932385;
+inline const double infinity = std::numeric_limits<double>::infinity();
+inline const double pi = 3.1415926535897932385;
 
 inline double degrees_to_radians(double degrees) {
     return degrees * pi / 180.0;
